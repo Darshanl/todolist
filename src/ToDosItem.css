@@ -1,0 +1,16 @@
+.delete {
+    float: right;
+    padding: 3px 5px;
+    transform:translateY(-3px);
+    background-color: rgb(117, 38, 18);
+    color: #fff;
+    border-radius: 2px;
+    text-align: center;
+}
+
+.delete:hover{
+    background-color: rgb(102, 11, 11)
+}
+.b--gray:hover {
+    border-left: 4px solid #122f2c !important;
+}
