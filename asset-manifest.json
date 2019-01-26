@@ -1,15 +1,15 @@
 {
-  "main.css": "/todolist/index.html/static/css/main.adcccac4.chunk.css",
-  "main.js": "/todolist/index.html/static/js/main.59d0dd4d.chunk.js",
-  "main.js.map": "/todolist/index.html/static/js/main.59d0dd4d.chunk.js.map",
-  "static/css/1.d7b6bece.chunk.css": "/todolist/index.html/static/css/1.d7b6bece.chunk.css",
-  "static/js/1.46dd5191.chunk.js": "/todolist/index.html/static/js/1.46dd5191.chunk.js",
-  "static/js/1.46dd5191.chunk.js.map": "/todolist/index.html/static/js/1.46dd5191.chunk.js.map",
-  "runtime~main.js": "/todolist/index.html/static/js/runtime~main.69d71974.js",
-  "runtime~main.js.map": "/todolist/index.html/static/js/runtime~main.69d71974.js.map",
-  "static/css/1.d7b6bece.chunk.css.map": "/todolist/index.html/static/css/1.d7b6bece.chunk.css.map",
-  "static/css/main.adcccac4.chunk.css.map": "/todolist/index.html/static/css/main.adcccac4.chunk.css.map",
-  "index.html": "/todolist/index.html/index.html",
-  "precache-manifest.1ffb114e4f19d0bd4db2dd7a95ebb9d4.js": "/todolist/index.html/precache-manifest.1ffb114e4f19d0bd4db2dd7a95ebb9d4.js",
-  "service-worker.js": "/todolist/index.html/service-worker.js"
+  "main.css": "/todolist/index/static/css/main.adcccac4.chunk.css",
+  "main.js": "/todolist/index/static/js/main.3605ffc7.chunk.js",
+  "main.js.map": "/todolist/index/static/js/main.3605ffc7.chunk.js.map",
+  "static/css/1.d7b6bece.chunk.css": "/todolist/index/static/css/1.d7b6bece.chunk.css",
+  "static/js/1.46dd5191.chunk.js": "/todolist/index/static/js/1.46dd5191.chunk.js",
+  "static/js/1.46dd5191.chunk.js.map": "/todolist/index/static/js/1.46dd5191.chunk.js.map",
+  "runtime~main.js": "/todolist/index/static/js/runtime~main.acb550cf.js",
+  "runtime~main.js.map": "/todolist/index/static/js/runtime~main.acb550cf.js.map",
+  "static/css/1.d7b6bece.chunk.css.map": "/todolist/index/static/css/1.d7b6bece.chunk.css.map",
+  "static/css/main.adcccac4.chunk.css.map": "/todolist/index/static/css/main.adcccac4.chunk.css.map",
+  "index.html": "/todolist/index/index.html",
+  "precache-manifest.9fa090f828c23948a44507aa8380da78.js": "/todolist/index/precache-manifest.9fa090f828c23948a44507aa8380da78.js",
+  "service-worker.js": "/todolist/index/service-worker.js"
 }
