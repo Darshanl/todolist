@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
-import AddToList from './AddToList';
-import ToDos from './ToDos';
+import AddToList from '../component/AddToList';
+import ToDos from '../component/ToDos';
 
 class App extends Component{
     constructor(){
@@ -71,8 +71,22 @@ class App extends Component{
         return(
             <div className="tc">
                 <h1 className="bg-light-red f1 pa2 lh-copy">To-do List</h1>
-                <AddToList textChange={this.ontextChange} addChange={this.addChange} keyPressed={this.keyPressed}/>
-                <ToDos delTodo={this.delTodo} done={this.done} todoslist={this.state.todoslist} chChange={this.checkChange}/>
+                <div className="bg-washed-blue" style={{width:'50%', margin:'auto'}}>
+                    <AddToList 
+                        searchField={this.state.searchField} 
+                        textChange={this.ontextChange} 
+                        addChange={this.addChange} 
+                        keyPressed={this.keyPressed}
+                    />
+                </div>
+                <div style={{width:'50%', margin:'auto'}}>
+                    <ToDos
+                        delTodo={this.delTodo} 
+                        done={this.done} 
+                        todoslist={this.state.todoslist} 
+                        chChange={this.checkChange}
+                    />
+                </div>
             </div>
         )
     }

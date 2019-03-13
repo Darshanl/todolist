@@ -14,7 +14,7 @@ const ToDosItem = ({title,chChange,done,user,delTodo}) => {
     }
 
     return(
-        <div className='tl'>
+        <div className='tl' style={{width:'90%', margin:'auto'}}>
             <p className="bg-light-gray bl bw2 mw8 center b--gray pa2 ma1" style={done()}>
                 <input onChange={chChange.bind(this , id)}
                 type="checkbox"
