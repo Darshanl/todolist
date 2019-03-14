@@ -71,7 +71,7 @@ class App extends Component{
         return(
             <div className="tc">
                 <h1 className="bg-light-red f1 pa2 lh-copy">To-do List</h1>
-                <div className="bg-washed-blue" style={{width:'50%', margin:'auto'}}>
+                <div className="bg-light-blue" style={{width:'50%', margin:'auto'}}>
                     <AddToList 
                         searchField={this.state.searchField} 
                         textChange={this.ontextChange} 

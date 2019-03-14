@@ -3,8 +3,8 @@
 }
 
 .inputBG{
-    background-color:  #F6FFFE !important;
     border-bottom: 1px solid #0c1b17;
+    color:black !important;
 }
 
 .inputbg{
@@ -13,7 +13,12 @@
 
 .fa{
     cursor: pointer;
+    padding:2px;
 }
-.btn:focus, .inp{
+.btn:focus, .inp:focus{
     outline: none !important;
+}
+
+.inp::placeholder{
+    color:rgb(26, 21, 21);
 }
