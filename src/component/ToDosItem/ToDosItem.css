@@ -14,3 +14,7 @@
 .b--gray:hover {
     border-left: 4px solid #122f2c !important;
 }
+
+.fasd{
+    cursor: pointer;
+}

@@ -21,7 +21,7 @@ const ToDosItem = ({title,chChange,done,user,delTodo}) => {
                 className="mr2"
                 />
                 {title}
-                <button className="delete b--none"
+                <button className="delete b--none fasd"
                 onClick={delTodo.bind(this, id)}>
                 <i className="fa fa-trash" aria-hidden="true"></i></button>
             </p>
