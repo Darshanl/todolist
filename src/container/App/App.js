@@ -1,11 +1,18 @@
 import React, {Component} from 'react';
 import './App.css';
-import AddToList from '../component/AddToList';
-import ToDos from '../component/ToDos';
+import AddToList from '../../component/AddToList/AddToList';
+import ToDos from '../../component/ToDos/ToDos';
+import { DB_config} from '../../config/config';
+import firebase from 'firebase/app';
+import 'firebase/database'
 
 class App extends Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
+
+        this.app = firebase.initializeApp(DB_config);
+        this.database = this.app.database().ref().child('notes')
+
         this.state = {
             todoslist:[],
             searchField:'',
@@ -16,18 +23,33 @@ class App extends Component{
         this.setState({searchField:e.target.value})
     }
 
+    componentWillMount(){
+        const prevNotes = this.state.todoslist;
+
+        this.database.on('child_added', snap => {
+            prevNotes.push({
+                id:snap.key,
+                title:snap.val().searchField,
+                completed:false
+            })
+            this.setState({todoslist:prevNotes})
+        })
+
+        this.database.on('child_removed', snap => {
+            for(let i=0; i<prevNotes.length;i++){
+                if(prevNotes[i].id === snap.key){
+                    prevNotes.splice(i,1);
+                }
+            }
+            this.setState({todoslist:prevNotes})
+        })
+    }
+
     keyPressed = (e) => {
         if(e.key === 'Enter'){
-            let val = (this.state.todoslist.length)
-            const newTodo = {
-                id:val,
-                title:this.state.searchField,
-                completed:false
-            }
             if(this.state.searchField.length > 0){
-                this.setState({todoslist:[...this.state.todoslist,newTodo]})
+                this.database.push().set({searchField:this.state.searchField})
                 this.setState({searchField:''})
-                e.target.value = ''
             }
         }
     }
@@ -35,14 +57,8 @@ class App extends Component{
     ////////Add Todo button //////////////////
 
     addChange = () => {
-        let val = (this.state.todoslist.length)
-        const newTodo = {
-            id:val,
-            title:this.state.searchField,
-            completed:false,
-        }
         if(this.state.searchField.length > 0){
-            this.setState({todoslist:[...this.state.todoslist,newTodo]})
+            this.database.push().set({searchField:this.state.searchField})
             this.setState({searchField:''})
         }
     }
@@ -61,9 +77,7 @@ class App extends Component{
     /////////////////Delete Todo///////////////////
 
     delTodo = (id) => {
-        this.setState({todoslist:[...this.state.todoslist.filter(todo => {
-            return todo.id !== id
-        })]})
+        this.database.child(id).remove();
     }
 
     render(){
@@ -71,7 +85,7 @@ class App extends Component{
         return(
             <div className="tc">
                 <h1 className="bg-light-red f1 pa2 lh-copy">To-do List</h1>
-                <div className="bg-light-blue" style={{maxWidth:'90%', margin:'auto'}}>
+                <div className="" style={{maxWidth:'90%', margin:'auto'}}>
                     <AddToList 
                         searchField={this.state.searchField} 
                         textChange={this.ontextChange} 
